@@ -1,22 +1,15 @@
-### Parcel features:
+Q: Composition of Component (Add a component inside another
+ const AnotherComponent = function(){
+    return <h2> This is Another Component</h2>
+}
 
-- Dev Build - parcel provides us develop build
-- Local Server - parcel also provides us a local server, which can be used to see live changes in our application.
-- HMR = Hot Module Replacement - exchanges, adds, or removes modules while an application is running, without a full reload
-
-and some of more cool features of Parcel are:
-
-- File Watching Algorithm - written in C++
-- Caching - Faster Builds
-- Image Optimization
-- Minification
-- Bundling
-- Compress
-- Consistent Hashing
-- Code Splitting
-- Differential Bundling - support older browsers
-- Diagnostic
-- Error Handling
-- HTTPs
-- Tree Shaking - remove unused code
-- Different Build for dev and prod bundles
+const Header = () => {
+  return (
+    <div className="Title" key="title">
+      <h1 style={{color:"blue"}} key="h1">This is h1 tag</h1>
+      <h2 style={{color:"palevioletred"}} key="h2">This is h2 tag</h2>
+      <AnotherComponent/>
+      <h3 style={{color:"green"}} key="h3">This is h3 tag</h3>
+    </div>
+  );
+};
